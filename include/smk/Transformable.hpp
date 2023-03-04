@@ -68,16 +68,21 @@ class Transformable : public TransformableBase {
   // Center
   void SetCenter(float center_x, float center_y);
   void SetCenter(const glm::vec2& center);
+  glm::vec2 center() const;
 
   // Position
   void Move(const glm::vec2& move);
   void Move(float x, float y);
   void SetPosition(float x, float y);
   void SetPosition(const glm::vec2& position);
+  glm::vec2 position() const;
+  float positionX() const;
+  float positionY() const;
 
   // Rotation
   void Rotate(float rotation);
   void SetRotation(float rotation);
+  float rotation() const;
 
   // Scale
   void SetScale(float scale);
@@ -85,6 +90,12 @@ class Transformable : public TransformableBase {
   void SetScale(float scale_x, float scale_y);
   void SetScaleX(float scale_x);
   void SetScaleY(float scale_y);
+
+  glm::vec2 scale() const;
+  float scaleX() const;
+  float scaleY() const;
+
+
 
   // Transformable override;
   glm::mat4 transformation() const override;

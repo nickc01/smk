@@ -23,6 +23,10 @@ void Transformable::Rotate(float rotation) {
   rotation_ += rotation;
 }
 
+glm::vec2 Transformable::center() const {
+  return center_;
+}
+
 /// @brief Set the position of the object to be drawn.
 /// @see Transformable::Move.
 /// @param position the position (x,y) of the object.
@@ -36,6 +40,34 @@ void Transformable::SetPosition(const glm::vec2& position) {
 /// @param y The position along the vertical axis.
 void Transformable::SetPosition(float x, float y) {
   position_ = {x, y};
+}
+
+glm::vec2 Transformable::position() const {
+  return position_;
+}
+
+float Transformable::positionX() const {
+  return position_.x;
+}
+
+float Transformable::positionY() const {
+  return position_.y;
+}
+
+float Transformable::rotation() const {
+  return rotation_;
+}
+
+glm::vec2 Transformable::scale() const {
+  return scale_;
+}
+
+float Transformable::scaleX() const {
+  return scale_.x;
+}
+
+float Transformable::scaleY() const {
+  return scale_.y;
 }
 
 /// Increase the position of the object being drawn.
