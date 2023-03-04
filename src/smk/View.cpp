@@ -6,6 +6,13 @@
 
 namespace smk {
 
+
+
+View::View(glm::vec2 center, glm::vec2 size) : x_(center.x), y_(center.y), width_(size.x), height_(size.y) {
+
+}
+
+
 /// @brief Set the center position of the in-game view.
 /// param x The center of the view along the horizontal axis.
 /// param y The center of the view along the vertical axis.
@@ -32,6 +39,14 @@ void View::SetSize(float width, float height) {
 /// param center The size of the view.
 void View::SetSize(const glm::vec2& size) {
   SetSize(size.x, size.y);
+}
+
+glm::vec2 View::size() const {
+  return glm::vec2(width_, height_);
+}
+
+glm::vec2 View::center() const {
+  return glm::vec2(x_,y_);
 }
 
 }  // namespace smk

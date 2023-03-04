@@ -13,10 +13,16 @@ namespace smk {
 /// screen ratio, the view ratio must be the same.
 class View {
  public:
+
+	 View(glm::vec2 center, glm::vec2 size);
+
   void SetCenter(float x, float y);
   void SetCenter(const glm::vec2& center);
   void SetSize(float width, float height);
   void SetSize(const glm::vec2& size);
+
+  glm::vec2 size() const;
+  glm::vec2 center() const;
 
   float Left() const { return x_ - width_ / 2; };     /// <
   float Right() const { return x_ + width_ / 2; };    /// <
